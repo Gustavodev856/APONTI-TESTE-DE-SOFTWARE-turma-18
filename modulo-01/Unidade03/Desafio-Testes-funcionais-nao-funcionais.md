@@ -35,3 +35,99 @@
 | **Dados necessários** | Nome completo do paciente, nome do psicólogo, data, horário e status da consulta (pendente, confirmado, entre outros). |
 | **Resultado esperado** | O agendamento é salvo com sucesso e fica disponível para consulta pelos profissionais envolvidos no atendimento. |
 | **Possíveis condições de erro** | Durante os testes foi observado que os campos de data e horário não possuem validação adequada, permitindo a inserção de formatos incorretos, como textos (strings), além de não apresentarem limite ou padrão definido. O campo de status também aceita valores sem validação. A ausência dessas regras pode gerar agendamentos com informações incorretas, causando problemas na organização da agenda da clínica. |
+
+
+
+
+ -------------------------------------------------------------------------------------------------------------------------
+
+ # Parte 1 — Testes Funcionais
+
+## Exercício 1 — Identificação das funcionalidades
+
+Este documento apresenta a análise das funcionalidades do sistema da clínica psicológica, identificando seus objetivos, usuários responsáveis, dados necessários, resultados esperados e possíveis falhas encontradas durante os testes funcionais.
+
+---
+
+# 1. Funcionalidade: Cadastro de Paciente
+
+## Objetivo da funcionalidade
+A funcionalidade de cadastro de paciente tem como objetivo permitir que a recepção registre novos pacientes no sistema, armazenando informações pessoais que serão utilizadas posteriormente em consultas e atendimentos realizados pela clínica.
+
+## Usuário responsável
+**Recepcionista**
+
+## Dados necessários para cadastro
+- Nome completo;
+- CPF;
+- Telefone;
+- E-mail.
+
+## Resultado esperado
+Ao preencher corretamente todos os campos e realizar o cadastro, o sistema deve salvar as informações do paciente com sucesso. Após o cadastro, os dados devem ficar disponíveis para consulta pela recepção e pelos psicólogos responsáveis pelos atendimentos.
+
+## Testes realizados e possíveis erros encontrados
+Durante os testes foi identificado que o sistema não realiza validações adequadas nos campos de entrada:
+
+- O campo CPF permite o cadastro com quantidade incorreta de caracteres.
+- O campo de e-mail aceita formatos inválidos, como endereços sem o caractere obrigatório "@";
+- O campo telefone não possui limite ou validação da quantidade correta de números.
+
+A falta dessas validações pode permitir o armazenamento de dados incorretos, dificultando a identificação do paciente e a comunicação entre a clínica e o usuário cadastrado.
+
+---
+
+# 2. Funcionalidade: Cadastro de Psicólogo
+
+## Objetivo da funcionalidade
+A funcionalidade de cadastro de psicólogos tem como objetivo permitir que o administrador registre os profissionais da clínica, mantendo suas informações disponíveis para utilização no gerenciamento dos atendimentos.
+
+## Usuário responsável
+**Administrador**
+
+## Dados necessários para cadastro
+- Nome completo;
+- CRP;
+- Especialidade;
+- Telefone.
+
+## Resultado esperado
+Após o preenchimento correto das informações, o sistema deve realizar o cadastro do psicólogo e disponibilizar seus dados para utilização em funcionalidades como agendamento de consultas.
+
+## Testes realizados e possíveis erros encontrados
+Durante os testes foram identificadas falhas relacionadas à validação dos campos:
+
+- O campo CRP aceita letras e números sem restrição, além de não possuir limite definido de caracteres.
+- O campo especialidade permite o preenchimento sem validação das informações inseridas.
+- O campo telefone também não apresenta limite de caracteres ou validação de formato.
+
+Essas falhas podem ocasionar o cadastro de profissionais com informações inválidas, prejudicando a organização dos dados da clínica e a identificação correta dos psicólogos cadastrados.
+
+---
+
+# 3. Funcionalidade: Agendamento de Consulta
+
+## Objetivo da funcionalidade
+A funcionalidade de agendamento tem como objetivo permitir o registro de consultas entre pacientes e psicólogos, organizando os horários disponíveis e mantendo o controle dos atendimentos realizados pela clínica.
+
+## Usuário responsável
+**Recepcionista ou Psicólogo**
+
+## Dados necessários para cadastro
+- Nome completo do paciente;
+- Nome do psicólogo;
+- Data da consulta;
+- Horário;
+- Status da consulta (pendente, confirmado, entre outros).
+
+## Resultado esperado
+Ao preencher os dados corretamente, o sistema deve salvar o agendamento e disponibilizar as informações para acompanhamento dos profissionais envolvidos no atendimento.
+
+## Testes realizados e possíveis erros encontrados
+Durante os testes foram identificadas falhas na validação dos campos:
+
+- O campo de data permite valores em formatos inadequados, incluindo textos (strings), sem validação de formato ou limite de caracteres.
+- O campo horário apresenta o mesmo problema, permitindo entradas que não correspondem a horários válidos.
+- O campo status também não possui validação adequada, permitindo valores fora do padrão esperado.
+
+A ausência dessas validações pode gerar registros de consultas incorretos, causando problemas na organização da agenda e no controle dos atendimentos da clínica.
