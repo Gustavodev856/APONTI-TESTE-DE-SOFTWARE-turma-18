@@ -91,3 +91,4 @@ Os testes não funcionais de **usabilidade** são muito importantes em sistemas 
 Problemas de usabilidade podem aumentar a quantidade de erros cometidos pelos usuários, gerar insegurança durante operações financeiras e causar uma experiência negativa.
 
 Por isso, durante os testes, é importante avaliar não apenas se as funcionalidades estão funcionando, mas também **como o usuário interage com o sistema para realizar suas tarefas**.
+clear
